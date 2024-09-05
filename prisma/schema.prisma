@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./database.sqlite3"
+}
+
+model Settings {
+    @@index([userId], name: "idx_userId")
+    @@index([worldId], name: "idx_worldId")
+    @@unique([userId, worldId, key], name: "unique_identifiers")
+
+    id    Int     @id @default(autoincrement())
+    userId String
+    worldId String
+    key     String
+    value   String
+}

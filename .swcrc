@@ -1,0 +1,37 @@
+{
+    "$schema": "https://swc.rs/schema.json",
+    "sourceMaps": "inline",
+    "module": {
+        "type": "es6",
+        "strictMode": true,
+        "noInterop": false
+    },
+    "jsc": {
+        "externalHelpers": false,
+        "target": "es2018",
+        "parser": {
+            "syntax": "typescript",
+            "tsx": true,
+            "decorators": false,
+            "dynamicImport": true
+        },
+        "transform": {
+            "legacyDecorator": true,
+            "decoratorMetadata": false,
+            "react": {
+                "throwIfNamespace": false,
+                "useBuiltins": false,
+                "pragma": "React.createElement",
+                "pragmaFrag": "React.Fragment",
+                "importSource": "react"
+            }
+        },
+        "keepClassNames": true,
+        "paths": {
+            "@/*": [
+                "*"
+            ]
+        },
+        "baseUrl": "./src"
+    }
+}
