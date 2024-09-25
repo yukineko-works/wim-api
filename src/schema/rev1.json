@@ -1,0 +1,41 @@
+{
+    "$ref": "#/definitions/WIMCloudSyncRev1",
+    "definitions": {
+        "WIMCloudSyncRev1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "lang": {
+                    "type": "string",
+                    "enum": [
+                        "auto",
+                        "ja",
+                        "en",
+                        "zh-CN",
+                        "zh-TW",
+                        "ko"
+                    ]
+                },
+                "qmsize": {
+                    "type": "number",
+                    "minimum": 0.5,
+                    "maximum": 1.5
+                },
+                "theme": {
+                    "type": "string",
+                    "enum": [
+                        "auto",
+                        "light",
+                        "dark"
+                    ]
+                }
+            },
+            "required": [
+                "lang",
+                "qmsize",
+                "theme"
+            ],
+            "title": "WIMCloudSyncRev1"
+        }
+    }
+}
