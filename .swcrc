@@ -4,7 +4,8 @@
     "module": {
         "type": "es6",
         "strictMode": true,
-        "noInterop": false
+        "noInterop": false,
+        "resolveFully": true
     },
     "jsc": {
         "externalHelpers": false,
