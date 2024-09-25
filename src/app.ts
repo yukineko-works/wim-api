@@ -24,5 +24,7 @@ app.use(router.routes())
 app.use(router.allowedMethods())
 
 const port = process.env.PORT || 3000
+app.proxy = true
 app.listen(port)
-console.log(`Server is running on port ${port}`)
+
+console.log(`Server is running on port ${port}\nhttp://localhost:${port}`)
