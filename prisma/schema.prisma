@@ -9,12 +9,14 @@ datasource db {
 
 model Settings {
     @@index([userId], name: "idx_userId")
-    @@index([worldId], name: "idx_worldId")
-    @@unique([userId, worldId, key], name: "unique_identifiers")
+    @@index([ipHash], name: "idx_ipHash")
+    @@unique([userId, ipHash], name: "unique_identifiers")
 
     id    Int     @id @default(autoincrement())
     userId String
-    worldId String
-    key     String
-    value   String
+    ipHash String
+    revision String
+    config   String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt @default(now())
 }
