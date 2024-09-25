@@ -32,6 +32,9 @@
                 "*"
             ]
         },
-        "baseUrl": "./src"
+        "baseUrl": "./src",
+        "experimental": {
+            "keepImportAttributes": true
+        }
     }
 }
