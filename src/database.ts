@@ -7,38 +7,35 @@ export class Database {
         return this._prisma
     }
 
-    static async upsert(userId: string, worldId = '$GLOBAL', key: string, value: string) {
+    static async upsert(userId: string, ipHash: string, config: string, revision: string) {
         return await this._prisma.settings.upsert({
             where: {
                 unique_identifiers: {
                     userId,
-                    worldId,
-                    key,
+                    ipHash,
                 }
             },
             create: {
                 userId,
-                worldId,
-                key,
-                value,
+                ipHash,
+                config,
+                revision,
             },
             update: {
-                value,
+                config,
             }
         })
     }
 
-    static async getAll(userId: string, worldId: string) {
+    static async get(ipHash: string) {
         return await this._prisma.settings.findMany({
             where: {
-                userId,
-                worldId: {
-                    in: [worldId, '$GLOBAL']
-                },
+                ipHash,
             },
             select: {
-                key: true,
-                value: true,
+                userId: true,
+                config: true,
+                updatedAt: true,
             },
         })
     }
