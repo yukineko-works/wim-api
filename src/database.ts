@@ -39,4 +39,15 @@ export class Database {
             },
         })
     }
+
+    static async getOne(userId: string, ipHash: string) {
+        return await this._prisma.settings.findUnique({
+            where: {
+                unique_identifiers: {
+                    userId,
+                    ipHash,
+                }
+            }
+        })
+    }
 }

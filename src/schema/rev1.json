@@ -30,11 +30,6 @@
                     ]
                 }
             },
-            "required": [
-                "lang",
-                "qmsize",
-                "theme"
-            ],
             "title": "WIMCloudSyncRev1"
         }
     }

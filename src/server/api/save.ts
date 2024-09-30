@@ -24,7 +24,17 @@ export default new Endpoint({
 
         const uidHash = CryptoJS.MD5(`key_${uid}`).toString()
         const ipHash = await getSHA256(ctx.request.ip)
-        await Database.upsert(uidHash, ipHash, JSON.stringify(json), rev)
+
+        const data = {}
+        const savedData = await Database.getOne(uidHash, ipHash)
+
+        if (savedData != null) {
+            Object.assign(data, JSON.parse(savedData.config))
+        }
+
+        Object.assign(data, json)
+
+        await Database.upsert(uidHash, ipHash, JSON.stringify(data), rev)
 
         ctx.status = 204
         return
