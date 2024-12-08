@@ -4,7 +4,7 @@ const ajv = new Ajv({ allErrors: true, strict: true })
 addSchema('1', './schema/rev1.json')
 
 async function addSchema(rev: string, path: string) {
-    const schema = await import(path, { assert: { type: 'json' } })
+    const schema = await import(path, { with: { type: 'json' } })
     ajv.addSchema('default' in schema && !('$ref' in schema) ? schema.default : schema, rev)
 }
 
