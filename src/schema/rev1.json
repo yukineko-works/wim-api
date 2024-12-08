@@ -28,6 +28,14 @@
                         "light",
                         "dark"
                     ]
+                },
+                "qmkeybind": {
+                    "type": "string",
+                    "enum": [
+                        "default",
+                        "stick",
+                        "trigger"
+                    ]
                 }
             },
             "title": "WIMCloudSyncRev1"
