@@ -36,6 +36,14 @@
                         "stick",
                         "trigger"
                     ]
+                },
+                "qmdominanthand": {
+                    "type": "string",
+                    "enum": [
+                        "default",
+                        "left",
+                        "right"
+                    ]
                 }
             },
             "title": "WIMCloudSyncRev1"
