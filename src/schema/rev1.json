@@ -34,7 +34,16 @@
                     "enum": [
                         "default",
                         "stick",
-                        "trigger"
+                        "trigger",
+                        "triggerCombo"
+                    ]
+                },
+                "qmdesktopkeybind": {
+                    "type": "string",
+                    "enum": [
+                        "default",
+                        "tab",
+                        "shiftTab"
                     ]
                 },
                 "qmdominanthand": {
